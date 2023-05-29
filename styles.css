@@ -39,7 +39,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
+    height: 45vh;
+}
+
+#color {
+    background: transparent;
+    width: 100px;
+    height: 100px; 
+    overflow: hidden;
 }
 
 .nboxes {
@@ -90,6 +97,7 @@ label {
 .container {
     width: 604px;
     height: 604px;
+    background: white;
     border: 5px solid #F15BB5;
     display: flex;
     border-radius: 10px;
