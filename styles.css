@@ -18,10 +18,12 @@ button {
     cursor: pointer;
     transition: .1s;
     border: none;
+    border: 2px solid #FEE440;
 }
 
 button:hover {
     transform: scale(1.09);
+    border: 2px solid #9B5DE5;
 }
 
 body {
@@ -36,7 +38,6 @@ body {
     margin-right: 125px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     height: 50vh;
 }
@@ -72,20 +73,18 @@ label {
 .apply {
     background: #F15BB5;
     color: #FEE440;
-    margin-top: -25px;
-    margin-bottom: 50px;
+    margin-top: -35px;
+    margin-bottom: 25px;
 }
 
 .clear {
     background: #F15BB5;
     color: #FEE440;
-    border: 1px solid #FEE440;
 }
 
 .clear:hover {
     background: #FEE440;
     color: #F15BB5;
-    border: 1px solid #9B5DE5;
 }
 
 .container {

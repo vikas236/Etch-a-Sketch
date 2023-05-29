@@ -6,60 +6,58 @@ const apply = document.querySelector(".apply");
 
 
 // generate sketchpad and boxes
-let num = 16;
-sqrs.value = num;
 function generateBoxes(num) {
-    console.log(container.style.height);
-    let size = (600/num)+"px";
-    for (i=0; i<num; i++) {
-    container.appendChild(document.createElement("div"));
-    let row = container.childNodes[i];
-        for (k=0; k<num; k++) {
+    sqrs.value = num;
+    let size = (600 / num) + "px";
+    for (i = 0; i < num; i++) {
+        container.appendChild(document.createElement("div"));
+        let row = container.childNodes[i];
+        for (k = 0; k < num; k++) {
             row.appendChild(document.createElement("div"));
             row.childNodes[k].classList.add("box");
-            console.log(size);
-            row.childNodes[k].style.width=size;
-            row.childNodes[k].style.height=size;
+            row.childNodes[k].style.width = size;
+            row.childNodes[k].style.height = size;
+            console.log(row.childNodes[k].style.width)
         };
     };
 };
-generateBoxes(num);
+generateBoxes(100);
 
 
 // functions
 const box = document.querySelectorAll(".box");
 
 function activateBox() {
-    for (i=0; i<box.length; i++) {
-        box[i].addEventListener("mouseover", function() {
+    for (i = 0; i < box.length; i++) {
+        box[i].addEventListener("mouseover", function () {
             if (draw && !this.classList.contains("active")) {
-                this.style.background="#9B5DE5";
+                this.style.background = "#9B5DE5";
             }
         });
-        box[i].addEventListener("mousedown", function() {
+        box[i].addEventListener("mousedown", function () {
             if (!this.classList.contains("active")) {
-                this.style.background="#9B5DE5";
+                this.style.background = "#9B5DE5";
             }
         })
     }
 }
 
 function applyNumber() {
-    apply.addEventListener("click", function() {
+    apply.addEventListener("click", function () {
         empty();
-        console.log(sqrs.value);
-        generateBoxes(sqrs.value);
+        if (sqrs.value <101) { generateBoxes(sqrs.value); }
+        else { sqrs.value = 100 };
     })
 }
 
 function empty() {
-    for (i=0; i<box.length; i++) { box[i].style.background="none"; };
+    for (i = 0; i < box.length; i++) { box[i].style.background = "none"; };
 };
 
 let draw;
-window.addEventListener("mousedown", function() { draw = true; })
+window.addEventListener("mousedown", function () { draw = true; })
 
-window.addEventListener("mouseup", function() { draw = false; })
+window.addEventListener("mouseup", function () { draw = false; })
 
 
 // calling functions and events
